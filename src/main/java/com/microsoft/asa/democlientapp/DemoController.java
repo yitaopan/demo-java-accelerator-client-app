@@ -13,20 +13,20 @@ import java.util.Map;
 @Configuration
 public class DemoController {
 
-//    @Value("${hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds:0}")
-//    private String hystrixTimeoutInMilliseconds;
-//
-//    @Value("${feign.client.config.default.connectTimeout:0}")
-//    private String feignConnectTimeout;
-//
-//    @Value("${feign.client.config.default.readTimeout:0}")
-//    private String feignReadTimeout;
-//
-//    @Value("${security.oauth2.resource.user-info-uri:none}")
-//    private String securityUserInfoUri;
-//
-//    @Value("${spring.sleuth.sampler.probability:0}")
-//    private String springSleuthSamplerProbability;
+    @Value("${hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds:0}")
+    private String hystrixTimeoutInMilliseconds;
+
+    @Value("${feign.client.config.default.connectTimeout:0}")
+    private String feignConnectTimeout;
+
+    @Value("${feign.client.config.default.readTimeout:0}")
+    private String feignReadTimeout;
+
+    @Value("${security.oauth2.resource.user-info-uri:none}")
+    private String securityUserInfoUri;
+
+    @Value("${spring.sleuth.sampler.probability:0}")
+    private String springSleuthSamplerProbability;
 
     @GetMapping("/hello")
     public String helloBase() {
@@ -41,11 +41,11 @@ public class DemoController {
     @GetMapping("/configs")
     public Map<String, String> getConfigs() {
         HashMap<String, String> configs = new HashMap<>();
-//        configs.put("hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds", hystrixTimeoutInMilliseconds);
-//        configs.put("feign.client.config.default.connectTimeout", feignConnectTimeout);
-//        configs.put("feign.client.config.default.readTimeout", feignReadTimeout);
-//        configs.put("security.oauth2.resource.user-info-uri", securityUserInfoUri);
-//        configs.put("spring.sleuth.sampler.probability", springSleuthSamplerProbability);
+        configs.put("hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds", hystrixTimeoutInMilliseconds);
+        configs.put("feign.client.config.default.connectTimeout", feignConnectTimeout);
+        configs.put("feign.client.config.default.readTimeout", feignReadTimeout);
+        configs.put("security.oauth2.resource.user-info-uri", securityUserInfoUri);
+        configs.put("spring.sleuth.sampler.probability", springSleuthSamplerProbability);
         return configs;
     }
 }
